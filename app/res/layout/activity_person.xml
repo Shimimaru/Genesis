@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu.Account.Person">
+
+    <TextView
+        android:id="@+id/accountFirstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="64dp"
+        android:text="First Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/accountFirstNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Empty"
+        app:layout_constraintStart_toEndOf="@+id/accountFirstNameText"
+        app:layout_constraintTop_toTopOf="@+id/accountFirstNameText" />
+
+    <TextView
+        android:id="@+id/accountLastNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Last Name"
+        app:layout_constraintStart_toStartOf="@+id/accountFirstNameText"
+        app:layout_constraintTop_toBottomOf="@+id/accountFirstNameText" />
+
+    <TextView
+        android:id="@+id/accountLastNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Empty"
+        app:layout_constraintStart_toStartOf="@+id/accountFirstNameValue"
+        app:layout_constraintTop_toBottomOf="@+id/accountFirstNameValue" />
+
+    <TextView
+        android:id="@+id/accountEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="@+id/accountLastNameText"
+        app:layout_constraintTop_toBottomOf="@+id/accountLastNameText" />
+
+    <TextView
+        android:id="@+id/accountEmailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Empty"
+        app:layout_constraintStart_toStartOf="@+id/accountLastNameValue"
+        app:layout_constraintTop_toBottomOf="@+id/accountLastNameValue" />
+
+    <TextView
+        android:id="@+id/accountPhoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="Phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/accountEmailText"
+        app:layout_constraintTop_toBottomOf="@+id/accountEmailText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/accountPhoneValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="1dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toBottomOf="@+id/accountPhoneText"
+        app:layout_constraintStart_toStartOf="@+id/accountEmailValue"
+        app:layout_constraintTop_toBottomOf="@+id/accountEmailValue" />
+</androidx.constraintlayout.widget.ConstraintLayout>

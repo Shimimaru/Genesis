@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tavern"
+    tools:context=".menu.Account.Status">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="308dp"
+        android:layout_height="511dp"
+        android:background="#99000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/titleText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/titleText"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        app:layout_constraintVertical_bias="0.581">
+
+        <TextView
+            android:id="@+id/strengthText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Strength"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/experienceText"
+            app:layout_constraintTop_toBottomOf="@+id/experienceText" />
+
+        <TextView
+            android:id="@+id/wisdomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Wisdom"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/intelligenceText"
+            app:layout_constraintTop_toBottomOf="@+id/intelligenceText" />
+
+        <TextView
+            android:id="@+id/agilityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Agility"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/strengthText"
+            app:layout_constraintTop_toBottomOf="@+id/strengthText" />
+
+        <TextView
+            android:id="@+id/charismaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Charisma"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/wisdomText"
+            app:layout_constraintTop_toBottomOf="@+id/wisdomText" />
+
+        <TextView
+            android:id="@+id/enduranceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Endurance"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/agilityText"
+            app:layout_constraintTop_toBottomOf="@+id/agilityText" />
+
+        <TextView
+            android:id="@+id/intelligenceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="12dp"
+            android:text="Intelligence"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/enduranceText"
+            app:layout_constraintTop_toBottomOf="@+id/enduranceText" />
+
+        <TextView
+            android:id="@+id/eventNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
+            android:layout_marginTop="32dp"
+            android:text="Joshua"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toEndOf="@+id/nameText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/levelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Level"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/nameText"
+            app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+        <TextView
+            android:id="@+id/experienceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Experience"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/levelText"
+            app:layout_constraintTop_toBottomOf="@+id/levelText" />
+
+        <TextView
+            android:id="@+id/levelValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="99"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/eventNameValue"
+            app:layout_constraintTop_toBottomOf="@+id/eventNameValue" />
+
+        <TextView
+            android:id="@+id/experienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="100/100"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/levelValue"
+            app:layout_constraintTop_toBottomOf="@+id/levelValue" />
+
+        <TextView
+            android:id="@+id/strengthValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/experienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/experienceValue" />
+
+        <TextView
+            android:id="@+id/strengthExperienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/experienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/experienceValue" />
+
+        <TextView
+            android:id="@+id/agilityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/strengthValue"
+            app:layout_constraintTop_toBottomOf="@+id/strengthValue" />
+
+        <TextView
+            android:id="@+id/agilityExperienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/strengthExperienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/strengthExperienceValue" />
+
+        <TextView
+            android:id="@+id/enduranceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/agilityValue"
+            app:layout_constraintTop_toBottomOf="@+id/agilityValue" />
+
+        <TextView
+            android:id="@+id/enduranceExperienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.011"
+            app:layout_constraintStart_toStartOf="@+id/agilityExperienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/agilityExperienceValue" />
+
+        <TextView
+            android:id="@+id/intelligenceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/enduranceValue"
+            app:layout_constraintTop_toBottomOf="@+id/enduranceValue" />
+
+        <TextView
+            android:id="@+id/intelligenceExperienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/enduranceExperienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/enduranceExperienceValue" />
+
+        <TextView
+            android:id="@+id/wisdomValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/intelligenceValue"
+            app:layout_constraintTop_toBottomOf="@+id/intelligenceValue" />
+
+        <TextView
+            android:id="@+id/wisdomExperienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/intelligenceExperienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/intelligenceExperienceValue" />
+
+        <TextView
+            android:id="@+id/charismaValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/wisdomValue"
+            app:layout_constraintTop_toBottomOf="@+id/wisdomValue" />
+
+        <TextView
+            android:id="@+id/charismaExperienceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/wisdomExperienceValue"
+            app:layout_constraintTop_toBottomOf="@+id/wisdomExperienceValue"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:text="Name"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="310dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="16dp"
+        android:text="Status Screen"
+        android:textSize="50dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

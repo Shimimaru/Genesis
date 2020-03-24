@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu.Account.Account">
+
+    <Button
+        android:id="@+id/accountPlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="144dp"
+        android:text="Player"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/accountPersonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Person"
+        app:layout_constraintEnd_toEndOf="@+id/accountPlayerButton"
+        app:layout_constraintStart_toStartOf="@+id/accountPlayerButton"
+        app:layout_constraintTop_toBottomOf="@+id/accountPlayerButton" />
+
+    <Button
+        android:id="@+id/accountPlannerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="70dp"
+        android:text="Planner"
+        app:layout_constraintEnd_toEndOf="@+id/accountPersonButton"
+        app:layout_constraintStart_toStartOf="@+id/accountPersonButton"
+        app:layout_constraintTop_toBottomOf="@+id/accountPersonButton" />
+
+    <Button
+        android:id="@+id/accountSettingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Setting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/accountPlannerButton"
+        app:layout_constraintStart_toStartOf="@+id/accountPlannerButton"
+        app:layout_constraintTop_toBottomOf="@+id/accountPlannerButton"
+        app:layout_constraintVertical_bias="0.06" />
+</androidx.constraintlayout.widget.ConstraintLayout>

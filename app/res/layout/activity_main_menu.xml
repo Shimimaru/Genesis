@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/piano"
+    tools:context=".menu.MainMenu.MainMenu">
+    android:fitsSystemWindows="true"
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="655dp"
+        android:text="M\na\ni\nn\nM\ne\nn\nu"
+        android:textSize="68sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.986" />
+
+    <Button
+        android:id="@+id/accountButton"
+        android:layout_width="259dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:text="Account"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/plannerButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/plannerButton"
+        android:layout_width="263dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="96dp"
+        android:background="@android:color/transparent"
+        android:text="Planner"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountButton" />
+
+    <Button
+        android:id="@+id/questButton"
+        android:layout_width="259dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/transparent"
+        android:text="Quests"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/plannerButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plannerButton" />
+
+    <Button
+        android:id="@+id/socialButton"
+        android:layout_width="263dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/transparent"
+        android:text="Social"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/questButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questButton" />
+
+    <Button
+        android:id="@+id/settingButton"
+        android:layout_width="259dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/transparent"
+        android:text="Settings"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/socialButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapButton" />
+
+    <Button
+        android:id="@+id/quitButton"
+        android:layout_width="263dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/transparent"
+        android:text="Quit"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/settingButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingButton" />
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="265dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:text="Map"
+        app:layout_constraintEnd_toEndOf="@+id/socialButton"
+        app:layout_constraintTop_toBottomOf="@+id/socialButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
