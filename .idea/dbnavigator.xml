@@ -31,7 +31,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="127dd84d-2674-4449-8818-3cad4d59ad0d">
-      <console name="Connection 6" type="STANDARD" schema="main" session="Main" />
+      <console name="Connection 6" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
