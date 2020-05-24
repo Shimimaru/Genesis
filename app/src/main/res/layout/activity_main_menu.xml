@@ -85,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="@+id/socialButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapButton" />
+        app:layout_constraintTop_toBottomOf="@+id/questMapButton" />
 
     <Button
         android:id="@+id/quitButton"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/settingButton" />
 
     <Button
-        android:id="@+id/mapButton"
+        android:id="@+id/questMapButton"
         android:layout_width="265dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"

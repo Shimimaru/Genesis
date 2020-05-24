@@ -12,6 +12,7 @@ class LoginDatabase(context : Context) : LoginDatabaseInterface{
         db = Database.db
         Database.dbw = Database.db.writableDatabase
         Database.dbr = Database.db.readableDatabase
+        db.initQuestGenerator()
     }
     override fun checkUserName(username: String): Boolean {
         var usernameQuery : String = "SELECT " + Database.KEY_ACCOUNT_USERNAME + " FROM " + Database.TABLE_ACCOUNT +

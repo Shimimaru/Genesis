@@ -1,4 +1,4 @@
-package com.example.Genesis.menu.FriendsList
+package com.example.Genesis.menu.Social.FriendsList
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

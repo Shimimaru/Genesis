@@ -13,6 +13,7 @@ class AccountDatabase(var account : Account) : AccountContract.AccountDatabaseIn
         var cv : ContentValues = ContentValues()
         cv.put(Database.KEY_ACCOUNT_USERNAME,account.username)
         cv.put(Database.KEY_ACCOUNT_PASSWORD,account.password)
+        cv.put(Database.KEY_ACCOUNT_QUEST,0)
         var re : Long = Database.dbw.insert(Database.TABLE_ACCOUNT,null,cv)
         if(-1L == re)
             return false
