@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 
 import com.example.Genesis.R
 
@@ -19,24 +21,25 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 
-class deleteTab(planner : Planner) : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+class deleteTab(var planner : Planner) : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delete_tab, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_delete_tab, container, false)
+        var eventDeleteButton = view.findViewById<Button>(R.id.deleteBUtton)
+        var eventDeleteNameValue = view.findViewById<EditText>(R.id.deleteName)
+        eventDeleteButton?.setOnClickListener(){
+            var arrayList = planner.plannerDB.getAllEvent()
+            var eventID : Int? = null;
+            for( i in 0 until arrayList.size){
+                if(arrayList.get(i).name == eventDeleteNameValue.text.toString()){
+                    eventID = arrayList.get(i).id
+                }
+            }
+            if (eventID != null) {
+                planner.plannerDB.deleteEvent(eventID)
+                planner.refresh()
+            }
+        }
+        return view
     }
 }

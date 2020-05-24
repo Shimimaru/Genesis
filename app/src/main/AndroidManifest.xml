@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.Genesis">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:hardwareAccelerated="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.example.Genesis.menu.Account.Person"></activity>
-        <activity android:name="com.example.Genesis.menu.Account.Account" />
-        <activity android:name="com.example.Genesis.menu.FriendsList.Friend" />
-        <activity android:name="com.example.Genesis.menu.FriendsList.FriendsList" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -33,29 +36,29 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCyby5CgdNevoEkTeUPla9-37ZW4qjB2wg" />
+            android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.Genesis.menu.Map.Map"
-            android:label="@string/title_activity_map"/>
-
-        <activity
-            android:name="com.example.Genesis.menu.Map.DemoMap"
-            android:label="@string/title_activity_map"/>
-
-
-        <activity android:name="com.example.Genesis.menu.Register.Register" />
-        <activity android:name="com.example.Genesis.menu.Account.Setting" />
+            android:name=".menu.Quest.QuestMap.QuestMap"
+            android:label="@string/title_activity_quest_map"></activity>
+        <activity android:name=".menu.Quest.QuestsCreate.QuestCreateMenu" />
+        <activity android:name=".menu.Account.Person" />
+        <activity android:name=".menu.Account.Account" />
+        <activity android:name="com.example.Genesis.menu.Social.FriendsList.Friend" />
+        <activity android:name="com.example.Genesis.menu.Social.FriendsList.FriendsList" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.InventoryMainActivity" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentActivity" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentAdapter" />
-        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.PlayerInventory" />
-        <activity android:name="com.example.Genesis.menu.Quests" />
-        <activity android:name="com.example.Genesis.menu.Account.planner.Planner" />
-        <activity android:name="com.example.Genesis.menu.Account.Status" />
-        <activity android:name="com.example.Genesis.menu.MainMenu.MainMenu" />
-        <activity android:name="com.example.Genesis.menu.Login.Login">
-
+        <activity
+            android:name=".menu.Map.Map"
+            android:label="@string/title_activity_map" />
+        <activity android:name=".menu.Register.Register" />
+        <activity android:name=".menu.Account.Setting" />
+        <activity android:name=".menu.Quest.QuestMenu.QuestMenu" />
+        <activity android:name=".menu.Account.planner.Planner" />
+        <activity android:name=".menu.Account.Status" />
+        <activity android:name=".menu.MainMenu.MainMenu" />
+        <activity android:name=".menu.Login.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
