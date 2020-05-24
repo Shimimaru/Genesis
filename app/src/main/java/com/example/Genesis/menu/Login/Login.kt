@@ -7,6 +7,7 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Genesis.R
+import com.example.Genesis.database.Database
 import com.example.Genesis.menu.Login.LoginContract.*
 
 
@@ -38,6 +39,7 @@ class Login : AppCompatActivity(), LoginInterface {
         wipeButton.setOnClickListener(){
             loginPresenter.loginDB.db.wipeDatabase(this)
         }
+
     }
 
     override fun showMessage(message: String) {

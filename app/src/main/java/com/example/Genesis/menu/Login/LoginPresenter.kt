@@ -13,6 +13,7 @@ class LoginPresenter(private var login : Login,var loginDB : LoginDatabase) : Lo
             Account.accountNumber)
         Account.player = account.player
         Account.person = account.person
+
     }
 
     override fun validateAccount(username: String, password: String): Boolean {

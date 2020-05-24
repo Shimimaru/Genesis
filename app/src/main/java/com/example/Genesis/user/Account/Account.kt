@@ -1,6 +1,7 @@
 package com.example.Genesis.user.Account
 
 import android.content.Context
+import com.example.Genesis.objects.Quest
 import com.example.Genesis.user.Person.Person
 import com.example.Genesis.user.Player.Player
 import java.io.Serializable
@@ -9,6 +10,7 @@ class Account () : Serializable{
     var accNum : Int = 0
     var username : String = ""
     var password : String = ""
+    var questList : MutableList<Quest> = mutableListOf<Quest>()
     lateinit var person : Person
     lateinit var player : Player
     lateinit var accountDB : AccountDatabase
