@@ -30,6 +30,7 @@ class viewTab(var planner : Planner) : Fragment() {
                 var event = planner.plannerDB.getFullEvent(eventViewNameValue.text.toString())
                 planner.eventName.text = event.name
                 planner.eventDescription.text = event.description
+                planner.refresh()
         }
         return view
     }

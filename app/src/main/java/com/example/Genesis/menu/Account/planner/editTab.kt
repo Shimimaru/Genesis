@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 
 import com.example.Genesis.R
 
@@ -18,24 +20,27 @@ private const val ARG_PARAM2 = "param2"
  * Use the [editTab.newInstance] factory method to
  * create an instance of this fragment.
  */
-class editTab(planner : Planner) : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+class editTab(var planner : Planner) : Fragment() {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_edit_tab, container, false)!!
+        var eventNameValue = view.findViewById<EditText>(R.id.eventNamesValue2)
+        var eventDescriptionValue = view.findViewById<EditText>(R.id.eventDescriptionValue2)
+        var eventNoteValue = view.findViewById<EditText>(R.id.eventNotesValue2)
+        var eventAddButton = view.findViewById<Button>(R.id.eventAddButton2)
+        eventAddButton.setOnClickListener(){
+            var event: EventDesc = planner.plannerDB.getEvent(planner.dateFormatted)
+            if (event != null) {
+                var event = EventDesc(
+                    0,
+                    eventNameValue.text.toString(),
+                    eventDescriptionValue.text.toString(),
+                    eventNoteValue.text.toString(),
+                    planner.dateFormatted
+                )
+                planner.plannerDB.updateEvent(event)
+                planner.refresh()
+            }
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_tab, container, false)
+        return view
     }
 }

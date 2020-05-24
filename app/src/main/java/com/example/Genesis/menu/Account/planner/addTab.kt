@@ -15,11 +15,6 @@ import com.example.Genesis.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [addTab.newInstance] factory method to
- * create an instance of this fragment.
- */
 class addTab(var planner : Planner) : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -29,13 +24,14 @@ class addTab(var planner : Planner) : Fragment() {
         var eventNoteValue = view.findViewById<EditText>(R.id.eventNotesValue)
         var eventAddButton = view.findViewById<Button>(R.id.eventAddButton)
         eventAddButton.setOnClickListener(){
-            var event = EventDesc(
+            var event = EventDesc(0,
                 eventNameValue.text.toString(),
                 eventDescriptionValue.text.toString(),
                 eventNoteValue.text.toString(),
                 planner.dateFormatted
             )
             planner.plannerDB.insertEvent(event)
+            planner.refresh()
         }
         return view
     }
