@@ -46,11 +46,16 @@
 
         <activity android:name="com.example.Genesis.menu.Register.Register" />
         <activity android:name="com.example.Genesis.menu.Account.Setting" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.InventoryMainActivity" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentActivity" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentAdapter" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.PlayerInventory" />
         <activity android:name="com.example.Genesis.menu.Quests" />
         <activity android:name="com.example.Genesis.menu.Account.planner.Planner" />
         <activity android:name="com.example.Genesis.menu.Account.Status" />
         <activity android:name="com.example.Genesis.menu.MainMenu.MainMenu" />
         <activity android:name="com.example.Genesis.menu.Login.Login">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

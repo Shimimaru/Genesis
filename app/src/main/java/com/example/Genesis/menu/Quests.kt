@@ -16,7 +16,6 @@ import com.example.Genesis.objects.items.Item
 import com.example.Genesis.user.Account.Account
 import kotlinx.android.synthetic.main.activity_quest_screen.*
 
-
 class Quests : AppCompatActivity() {
     lateinit var account : Account
     var list : MutableList<Item> = mutableListOf<Item>()
@@ -34,6 +33,7 @@ class Quests : AppCompatActivity() {
         var questRewards = findViewById<TextView>(R.id.questRewardValue)
         var questGenerateButton = findViewById<Button> (R.id.questGenerateButton)
         var completeButton = findViewById<Button> (R.id.questCompleteButton)
+
         questGenerateButton.setOnClickListener(){
             Generate()
             questName.text = quest.name
@@ -54,6 +54,7 @@ class Quests : AppCompatActivity() {
         }
 
     }
+
 
     fun Generate()
     {

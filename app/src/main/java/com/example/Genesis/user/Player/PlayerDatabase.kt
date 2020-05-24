@@ -44,6 +44,7 @@ class PlayerDatabase(var player : Player) : PlayerContract.PlayerDatabaseInterfa
         player.charisma = cursor.getInt(cursor.getColumnIndex(Database.KEY_PLAYER_CHARISMA))
         player.charismaExperienceValue = cursor.getInt(cursor.getColumnIndex(Database.KEY_PLAYER_CHARISMA_EXPERIENCE_VALUE))
         player.charismaExperienceMax = cursor.getInt(cursor.getColumnIndex(Database.KEY_PLAYER_CHARISMA_EXPERIENCE_MAX))
+
         cursor.close()
         println("Error")
         return player
