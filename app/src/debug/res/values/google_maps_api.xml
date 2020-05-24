@@ -4,12 +4,12 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=65:87:85:AF:FE:BA:4D:CC:34:A5:AB:33:7E:11:90:E2:3A:EA:FA:BC%3Bcom.example.myapplicationf
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=65:87:85:AF:FE:BA:4D:CC:34:A5:AB:33:7E:11:90:E2:3A:EA:FA:BC%3Bcom.example.Genesis.menu.Quest.QuestsCreate
 
     You can also add your credentials to an existing key, using these values:
 
     Package name:
-    com.example.Genesis
+    com.example.Genesis.menu.Quest.QuestsCreate
 
     SHA-1 certificate fingerprint:
     65:87:85:AF:FE:BA:4D:CC:34:A5:AB:33:7E:11:90:E2:3A:EA:FA:BC
