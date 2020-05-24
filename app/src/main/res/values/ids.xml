@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="accountInventoryButton" type="id" />
+    <item name="accountinventoryText" type="id" />
+    <item name="rewardNameValue" type="id" />
+    <item name="InventoryButton" type="id" />
+    <item name="equipment_list" type="id" />
+</resources>

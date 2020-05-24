@@ -14,12 +14,19 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         db.execSQL(CREATE_TABLE_ACCOUNT)
         db.execSQL(CREATE_TABLE_PERSON)
         db.execSQL(CREATE_TABLE_PLAYER)
+        //  db.execSQL(CREATE_TABLE_INVENTORY)
+
+
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_ACCOUNT'")
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_PERSON'")
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_PLAYER'")
+        //  db.execSQL("DROP TABLE IF EXISTS '$TABLE_INVENTORY'")
+
+
         onCreate(db)
     }
 
@@ -28,7 +35,6 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         this.close()
         context.deleteDatabase(DATABASE_NAME)
     }
-
     companion object {
         //Database
         var DATABASE_NAME = "genesis"
@@ -40,6 +46,8 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val TABLE_ACCOUNT = "account"
         const val TABLE_PERSON = "person"
         const val TABLE_PLAYER = "player"
+        //const val TABLE_INVENTORY = "inventory"
+
         //Account Columns
         const val KEY_ACCOUNT_ID = "id"
         const val KEY_ACCOUNT_USERNAME = "username"
@@ -77,6 +85,28 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_PLAYER_CHARISMA_EXPERIENCE_VALUE = "charismaEXPValue"
         const val KEY_PLAYER_CHARISMA_EXPERIENCE_MAX = "charismaEXPMax"
         const val KEY_PLAYER_ACCOUNTID = "accountID"
+
+        //Inventory Columns
+        /*  const val KEY_INVENTORY_ID = "id"
+          const val KEY_ITEM_ONE = "itemOne"
+          const val KEY_ITEM_TWO  = "itemTwo"
+          const val KEY_ITEM_THREE = "itemThree"
+          const val KEY_ITEM_FOUR = "itemFour"
+          const val KEY_ITEM_FIVE = "itemFour"
+          const val KEY_ITEM_SIX = "itemSix"
+
+
+          private val CREATE_TABLE_INVENTORY = ("CREATE TABLE " + TABLE_INVENTORY + "("
+                  + KEY_INVENTORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                  + KEY_ITEM_ONE + " VARCHAR(20),"
+                  + KEY_ITEM_TWO + " VARCHAR(20),"
+                  + KEY_ITEM_THREE + " VARCHAR(20),"
+                  + KEY_ITEM_FOUR + " VARCHAR(20),"
+                  + KEY_ITEM_FIVE + " VARCHAR(20),"
+                  + KEY_ITEM_SIX + " VARCHAR(20),"
+                  + ");")*/
+
+
         //Create Tables
         private val CREATE_TABLE_ACCOUNT = ("CREATE TABLE " + TABLE_ACCOUNT + "("
                 + KEY_ACCOUNT_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -85,6 +115,7 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 + KEY_ACCOUNT_PERSONID + " INTEGER,"
                 + KEY_ACCOUNT_PLAYERID + " INTEGER"
                 + ");")
+
         private val CREATE_TABLE_PERSON = ("CREATE TABLE " + TABLE_PERSON + "("
                 + KEY_PERSON_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + KEY_PERSON_FIRSTNAME + " VARCHAR(20),"
@@ -94,6 +125,7 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 + KEY_PERSON_ACCOUNTID + " INTEGER,"
                 + "FOREIGN KEY(" + KEY_PERSON_ACCOUNTID +") REFERENCES " + TABLE_ACCOUNT + "(" + KEY_ACCOUNT_ID + ")"
                 + ");")
+
         private val CREATE_TABLE_PLAYER = ("CREATE TABLE " + TABLE_PLAYER + "("
                 + KEY_PLAYER_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + KEY_PLAYER_LEVEL + " INTEGER, "
