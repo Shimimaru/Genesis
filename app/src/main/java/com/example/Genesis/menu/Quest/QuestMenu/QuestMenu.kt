@@ -101,7 +101,7 @@ class QuestMenu : AppCompatActivity(), QuestInterface,Serializable {
         arrayAdapter.notifyDataSetChanged()
     }
     companion object{
-        var trackedQuest : Int = 0;
+        var trackedQuest : Int = -1;
         lateinit var arrayAdapter : ArrayAdapter<String>
         lateinit var questList : ArrayList<Quest>
     }

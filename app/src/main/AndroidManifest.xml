@@ -46,6 +46,9 @@
         <activity android:name=".menu.Account.Account" />
         <activity android:name="com.example.Genesis.menu.Social.FriendsList.Friend" />
         <activity android:name="com.example.Genesis.menu.Social.FriendsList.FriendsList" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.InventoryMainActivity" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentActivity" />
+        <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentAdapter" />
         <activity
             android:name=".menu.Map.Map"
             android:label="@string/title_activity_map" />

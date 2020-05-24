@@ -68,11 +68,7 @@ class Planner : AppCompatActivity() {
             override fun onDayClick(dateClicked: Date) {
                 date = dateClicked
                 dateFormatted = dateFormat.format(date)
-                var event : EventDesc = plannerDB.getEvent(dateFormatted)
-                if(event.name != null)
-                    eventName.text = event.name
-                if(event.description != null)
-                    eventDescription.text = event.description
+                refresh()
 
             }
 
@@ -89,9 +85,21 @@ class Planner : AppCompatActivity() {
             var d : Date  = dateFormat.parse(eventList.get(i).date)
             var event = Event(Color.RED,d.time)
             compactCalendar?.addEvent(event)
+            val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+            val currentDate = sdf.format(Date())
+            if(eventList.get(i).date == currentDate )
+            {
+                var toast : Toast = Toast.makeText(this,"You have " + eventList.get(i).name + " today", Toast.LENGTH_SHORT)
+                toast.show()
+            }
         }
     }
 
+    fun refresh(){
+        var event : EventDesc = plannerDB.getEvent(dateFormatted)
+            eventName.text = event.name
+            eventDescription.text = event.description
+    }
     class fragmentAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm){
         val fragmentList:MutableList<Fragment> = ArrayList<Fragment>()
         val fragmentTitleList:MutableList<String> = ArrayList<String>()

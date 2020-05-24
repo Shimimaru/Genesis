@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".menu.Account.planner.editTab">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/eventAddButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="620dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toBottomOf="@+id/eventDescriptionValue2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toEndOf="@+id/eventDescriptionValue2"
+        app:layout_constraintTop_toTopOf="@+id/eventDescriptionValue2"
+        app:layout_constraintVertical_bias="0.001"
+        tools:layout_conversion_absoluteHeight="47dp"
+        tools:layout_conversion_absoluteWidth="86dp" />
+
+    <EditText
+        android:id="@+id/eventNotesValue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/eventDescriptionValue2"
+        app:layout_constraintTop_toBottomOf="@+id/eventDescriptionValue2"
+        tools:layout_conversion_absoluteHeight="32dp"
+        tools:layout_conversion_absoluteWidth="189dp" />
+
+    <TextView
+        android:id="@+id/eventNotesText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Event Notes:"
+        app:layout_constraintBottom_toTopOf="@+id/eventNotesValue2"
+        app:layout_constraintStart_toStartOf="@+id/eventDescriptionText2"
+        app:layout_constraintTop_toBottomOf="@+id/eventDescriptionText2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_conversion_absoluteHeight="32dp"
+        tools:layout_conversion_absoluteWidth="80dp" />
+
+    <EditText
+        android:id="@+id/eventDescriptionValue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Description"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/eventNamesValue2"
+        app:layout_constraintTop_toBottomOf="@+id/eventNamesValue2"
+        tools:layout_conversion_absoluteHeight="32dp"
+        tools:layout_conversion_absoluteWidth="189dp" />
+
+    <EditText
+        android:id="@+id/eventNamesValue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/eventNameText2"
+        app:layout_constraintTop_toTopOf="@+id/eventNameText2"
+        tools:layout_conversion_absoluteHeight="32dp"
+        tools:layout_conversion_absoluteWidth="189dp" />
+
+    <TextView
+        android:id="@+id/eventDescriptionText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Event Descrption:"
+        app:layout_constraintStart_toStartOf="@+id/eventNameText2"
+        app:layout_constraintTop_toBottomOf="@+id/eventNameText2"
+        tools:layout_conversion_absoluteHeight="32dp"
+        tools:layout_conversion_absoluteWidth="111dp" />
+
+    <TextView
+        android:id="@+id/eventNameText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Event Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="32dp"
+        tools:layout_conversion_absoluteWidth="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        tools:layout_conversion_absoluteHeight="731dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="-16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

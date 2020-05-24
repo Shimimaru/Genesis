@@ -1,5 +1,6 @@
 package com.example.Genesis.menu.Map
 
+import com.example.Genesis.menu.Account.planner.EventDesc
 import com.example.Genesis.menu.Quest.QuestDatabase
 import com.example.Genesis.menu.Quest.QuestMenu.QuestMenu
 import com.example.Genesis.objects.Quest
@@ -23,19 +24,25 @@ class MapPresenter(var map : Map,var googleMap: GoogleMap) {
         mapLocation = MapLocation(map,googleMap,mapDB)
         mapRoute = MapRoute(map,googleMap,mapDB)
         questList = questDB.getQuest()
-        for(i in 0 until questList.size){
-            print(i)
-            mapMarker.addQuestMarker(googleMap,questList.get(i))
-        }
-        googleMap.addMarker(
-            MarkerOptions()
-                .position(mapLocation.getCurrentLocation())
-                .title("Current Location")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-        )
-        var trackedLocation = questDB.getTrackedQuest().latlng
-        if (trackedLocation != null) {
-            mapRoute.createRoute(mapLocation.getCurrentLocation(),trackedLocation)
+        if(questList.size != 0) {
+            for (i in 0 until questList.size) {
+                print(i)
+                mapMarker.addQuestMarker(googleMap, questList.get(i))
+            }
+            if(questDB.getTrackedQuest() != null) {
+                googleMap.addMarker(
+                    MarkerOptions()
+                        .position(mapLocation.getCurrentLocation())
+                        .title("Current Location")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                )//Be sure your location is set within New Zealand because it cant create a route overseas.
+                var trackedLocation = questDB.getTrackedQuest().latlng
+                if (QuestMenu.trackedQuest != -1) {
+                    if (trackedLocation != null) {
+                        mapRoute.createRoute(mapLocation.getCurrentLocation(), trackedLocation)
+                    }
+                }
+            }
         }
     }
 }

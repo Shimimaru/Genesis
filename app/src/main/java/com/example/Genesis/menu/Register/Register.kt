@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.Genesis.R
+import com.example.Genesis.menu.Login.LoginDatabase
 import com.example.Genesis.menu.MainMenu.MainMenu
 import com.example.Genesis.user.Account.Account
 
@@ -23,17 +25,26 @@ class Register : AppCompatActivity() {
         var registerButton = findViewById(R.id.registerButton) as Button
         registerButton.setOnClickListener()
         {
-            var account = Account(
-                this
-                , usernameTextBox.text.toString()
-                , passwordTextBox.text.toString()
-                , firstNameTextBox.text.toString()
-                , lastNameTextBox.text.toString()
-                , emailTextBox.text.toString()
-                , phoneTextBox.text.toString()
-            )
-            val i = Intent(this, MainMenu::class.java)
-            startActivity(i)
+            if(!LoginDatabase(this).checkUserName(usernameTextBox.text.toString())){
+                var account = Account(
+                    this
+                    , usernameTextBox.text.toString()
+                    , passwordTextBox.text.toString()
+                    , firstNameTextBox.text.toString()
+                    , lastNameTextBox.text.toString()
+                    , emailTextBox.text.toString()
+                    , phoneTextBox.text.toString()
+                )
+                val i = Intent(this, MainMenu::class.java)
+                startActivity(i)
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(),"Username is Taken", Toast.LENGTH_SHORT).show();
+            }
+
+
+
         }
     }
 }
