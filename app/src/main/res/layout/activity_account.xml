@@ -20,9 +20,10 @@
         android:id="@+id/accountPersonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:text="Person"
         app:layout_constraintEnd_toEndOf="@+id/accountPlayerButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/accountPlayerButton"
         app:layout_constraintTop_toBottomOf="@+id/accountPlayerButton" />
 
@@ -31,9 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="28dp"
         android:text="Planner"
         app:layout_constraintEnd_toEndOf="@+id/accountPersonButton"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/accountPersonButton"
         app:layout_constraintTop_toBottomOf="@+id/accountPersonButton" />
 
@@ -48,4 +50,16 @@
         app:layout_constraintStart_toStartOf="@+id/accountPlannerButton"
         app:layout_constraintTop_toBottomOf="@+id/accountPlannerButton"
         app:layout_constraintVertical_bias="0.06" />
+
+    <Button
+        android:id="@+id/InventoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inventory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.Genesis.R
+import com.example.Genesis.menu.Account.Inventory.view.InventoryMainActivity
 import com.example.Genesis.menu.Account.planner.Planner
 
 class Account : AppCompatActivity() {
@@ -13,6 +14,8 @@ class Account : AppCompatActivity() {
     lateinit var personButton : Button
     lateinit var plannerButton : Button
     lateinit var settingButton : Button
+    lateinit var inventoryButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +37,11 @@ class Account : AppCompatActivity() {
             val i = Intent(this, Setting::class.java)
             startActivity(i)
         }
+
+        inventoryButton.setOnClickListener(){
+            val i = Intent(this, InventoryMainActivity:: class.java)
+            startActivity(i)
+        }
     }
 
     private fun initView(){
@@ -41,5 +49,6 @@ class Account : AppCompatActivity() {
         personButton = findViewById(R.id.accountPersonButton)
         plannerButton = findViewById(R.id.accountPlannerButton)
         settingButton = findViewById(R.id.accountSettingButton)
+        inventoryButton = findViewById(R.id.InventoryButton)
     }
 }
