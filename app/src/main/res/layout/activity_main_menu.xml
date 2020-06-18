@@ -9,6 +9,8 @@
     android:fitsSystemWindows="true"
 
 
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -62,6 +64,19 @@
         app:layout_constraintTop_toBottomOf="@+id/plannerButton" />
 
     <Button
+        android:id="@+id/friendButton"
+        android:layout_width="259dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/transparent"
+        android:text="Friends"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/questButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questButton" />
+
+    <Button
         android:id="@+id/socialButton"
         android:layout_width="263dp"
         android:layout_height="51dp"
@@ -69,10 +84,10 @@
         android:background="@android:color/transparent"
         android:text="Social"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/questButton"
+        app:layout_constraintEnd_toEndOf="@+id/friendButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questButton" />
+        app:layout_constraintTop_toBottomOf="@+id/friendButton" />
 
     <Button
         android:id="@+id/settingButton"

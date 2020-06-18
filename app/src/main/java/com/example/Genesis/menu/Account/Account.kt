@@ -17,6 +17,7 @@ class Account : AppCompatActivity() {
     lateinit var inventoryButton: Button
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account)
@@ -42,6 +43,8 @@ class Account : AppCompatActivity() {
             val i = Intent(this, InventoryMainActivity:: class.java)
             startActivity(i)
         }
+
+
     }
 
     private fun initView(){
@@ -50,5 +53,6 @@ class Account : AppCompatActivity() {
         plannerButton = findViewById(R.id.accountPlannerButton)
         settingButton = findViewById(R.id.accountSettingButton)
         inventoryButton = findViewById(R.id.InventoryButton)
+
     }
 }

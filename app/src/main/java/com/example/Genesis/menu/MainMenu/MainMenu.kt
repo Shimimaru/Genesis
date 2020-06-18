@@ -4,18 +4,21 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import com.example.Genesis.R
 import com.example.Genesis.menu.Map.Map
 import com.example.Genesis.menu.Account.Account
 import com.example.Genesis.menu.Quest.QuestMenu.QuestMenu
 import com.example.Genesis.menu.Account.Setting
 import com.example.Genesis.menu.Account.planner.Planner
+import com.example.Genesis.menu.Social.FriendsList.Friend
 
 class MainMenu : AppCompatActivity() {
 
     private lateinit var accountButton : Button
     private lateinit var plannerButton : Button
     private lateinit var questButton : Button
+    private lateinit var friendButton: Button
     private lateinit var settingButton : Button
     private lateinit var mapButton : Button
 
@@ -40,6 +43,14 @@ class MainMenu : AppCompatActivity() {
             val i = Intent(this, QuestMenu::class.java)
             startActivity(i);
         }
+
+        friendButton = findViewById<Button>(R.id.friendButton)
+        friendButton.setOnClickListener()
+        {
+            val i = Intent(this, Friend::class.java)
+            startActivity(i);
+        }
+
         settingButton = findViewById<Button>(R.id.settingButton)
         settingButton.setOnClickListener()
         {
