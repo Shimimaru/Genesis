@@ -138,6 +138,11 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_QUEST_LATITUDE = "latitude"
         const val KEY_QUEST_LONGITUDE = "longitude"
         const val KEY_QUEST_LEVEL = "level"
+
+        const val KEY_GUILD_ID = "id"
+        const val KEY_GUILD_ACCOUNT_ID = "accID"
+        const val KEY_GUILD_NAME = "name"
+        const val KEY_GUILD_DESCRIPTION = "description"
         //Event Columns
         const val KEY_EVENT_ID = "id"
         const val KEY_EVENT_NAME = "name"

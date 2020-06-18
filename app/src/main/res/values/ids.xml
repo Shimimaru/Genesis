@@ -5,4 +5,10 @@
     <item name="rewardNameValue" type="id" />
     <item name="InventoryButton" type="id" />
     <item name="equipment_list" type="id" />
+    <item name="guildNameValue" type="id" />
+    <item name="guildDescriptionValue" type="id" />
+    <item name="guildGenerateButton" type="id" />
+    <item name="guildAbandonButton" type="id" />
+    <item name="guildCreateButton" type="id" />
+    <item name="guildJoinButton" type="id" />
 </resources>
