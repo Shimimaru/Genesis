@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/socialTextValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="76dp"
+        android:text="Social Menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/friendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Friends"
+        app:layout_constraintEnd_toEndOf="@+id/socialTextValue"
+        app:layout_constraintStart_toStartOf="@+id/socialTextValue"
+        app:layout_constraintTop_toBottomOf="@+id/socialTextValue" />
+
+    <Button
+        android:id="@+id/guildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="GUILd"
+        app:layout_constraintEnd_toEndOf="@+id/friendButton"
+        app:layout_constraintStart_toStartOf="@+id/friendButton"
+        app:layout_constraintTop_toBottomOf="@+id/friendButton" />
+
+    <Button
+        android:id="@+id/partyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Party"
+        app:layout_constraintEnd_toEndOf="@+id/guildButton"
+        app:layout_constraintStart_toStartOf="@+id/guildButton"
+        app:layout_constraintTop_toBottomOf="@+id/guildButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
