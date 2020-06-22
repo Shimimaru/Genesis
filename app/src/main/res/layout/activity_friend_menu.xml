@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu.Social.Friends.FriendMenu">
+
+    <TextView
+        android:id="@+id/friendNameValue"
+        android:layout_width="208dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="15dp"
+        android:text="Friend Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toEndOf="@+id/friendNameText"
+        app:layout_constraintTop_toBottomOf="@+id/friendMenuTitle" />
+
+    <TextView
+        android:id="@+id/friendDescriptionValue"
+        android:layout_width="206dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/friendNameValue"
+        app:layout_constraintTop_toBottomOf="@+id/friendNameValue" />
+
+    <Button
+        android:id="@+id/friendDeleteButton"
+        android:layout_width="93dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="140dp"
+        android:text="Add"
+        app:layout_constraintEnd_toStartOf="@+id/friendGenerateButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/friendGenerateButton" />
+
+    <Button
+        android:id="@+id/friendCreateButton"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="11dp"
+        android:text="Chat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/friendGenerateButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/friendGenerateButton"
+        app:layout_constraintTop_toBottomOf="@+id/friendGenerateButton"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <Button
+        android:id="@+id/friendJoinButton"
+        android:layout_width="93dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="9dp"
+        android:text="Groups"
+        app:layout_constraintBottom_toBottomOf="@+id/friendCreateButton"
+        app:layout_constraintEnd_toEndOf="@+id/friendDeleteButton"
+        app:layout_constraintStart_toStartOf="@+id/friendDeleteButton"
+        app:layout_constraintTop_toBottomOf="@+id/friendDeleteButton" />
+
+    <Button
+        android:id="@+id/friendGenerateButton"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="40dp"
+        android:text="Remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+    <TextView
+        android:id="@+id/friendDescriptionText"
+        android:layout_width="84dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
+        android:text="Biography:"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/friendNameText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/friendNameText"
+        app:layout_constraintTop_toBottomOf="@+id/friendNameText"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <TextView
+        android:id="@+id/friendNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="friend Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/friendNameValue" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="409dp"
+        android:layout_height="303dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friendDescriptionValue">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="407dp"
+            android:layout_height="479dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/friendMenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="16dp"
+        android:text="Friends Menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:text="List of Friends"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friendNameText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

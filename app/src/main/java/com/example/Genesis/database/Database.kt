@@ -4,10 +4,10 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import com.example.Genesis.objects.Friend
 import com.example.Genesis.objects.Quest
 import com.example.Genesis.objects.Guild
 import com.example.Genesis.objects.Party
-import com.example.Genesis.user.Account.Account
 import com.google.android.gms.maps.model.LatLng
 
 class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -26,6 +26,8 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         db.execSQL(CREATE_TABLE_GUILD_GENERATED)
         db.execSQL(CREATE_TABLE_PARTY)
         db.execSQL(CREATE_TABLE_PARTY_GENERATED)
+        db.execSQL(CREATE_TABLE_FRIEND)
+        db.execSQL(CREATE_TABLE_FRIEND_GENERATED)
         db.execSQL(CREATE_TABLE_EVENT)
     }
 
@@ -39,6 +41,8 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_GUILD_GENERATED'")
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_PARTY'")
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_PARTY_GENERATED'")
+        db.execSQL("DROP TABLE IF EXISTS '$TABLE_FRIEND'")
+        db.execSQL("DROP TABLE IF EXISTS '$TABLE_FRIEND_GENERATED'")
         db.execSQL("DROP TABLE IF EXISTS '$CREATE_TABLE_EVENT'")
         onCreate(db)
     }
@@ -137,7 +141,7 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
             )
         )
         insertGeneParty(
-           Party(
+            Party(
                 2,
                 "Party 3",
                 "For people interested in stats"
@@ -152,6 +156,38 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         var re : Long = Database.dbw.insert(Database.TABLE_PARTY_GENERATED,null,cv)
     }
 
+    fun initFriendGenerator() {
+        insertGeneFriend(
+            Friend(
+                0,
+                "Friend 1",
+                "For people interested in combat"
+
+            )
+        )
+        insertGeneFriend(
+            Friend(
+                1,
+                "Friend 2",
+                "For people interested in items"
+
+            )
+        )
+        insertGeneFriend(
+            Friend(
+                2,
+                "Friend 3",
+                "For people interested in stats"
+
+            )
+        )
+    }
+    fun insertGeneFriend(friend: Friend){
+        var cv : ContentValues = ContentValues()
+        cv.put(Database.KEY_FRIEND_NAME,friend.name)
+        cv.put(Database.KEY_FRIEND_DESCRIPTION,friend.biography)
+        var re : Long = Database.dbw.insert(Database.TABLE_FRIEND_GENERATED,null,cv)
+    }
 
     fun wipeDatabase(context : Context)
     {
@@ -176,6 +212,8 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val TABLE_GUILD_GENERATED = "guildGenerated"
         const val TABLE_PARTY = "accountParty"
         const val TABLE_PARTY_GENERATED = "partyGenerated"
+        const val TABLE_FRIEND = "accountGuild"
+        const val TABLE_FRIEND_GENERATED = "friendGenerated"
         const val TABLE_EVENT = "event"
         //Account Columns
         const val KEY_ACCOUNT_ID = "id"
@@ -185,6 +223,7 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_ACCOUNT_PLAYERID = "playerID"
         const val KEY_ACCOUNT_QUEST = "quest"
         const val KEY_ACCOUNT_GUILD = "guild"
+        const val KEY_ACCOUNT_FRIEND = "friend"
         const val KEY_ACCOUNT_PARTY = "party"
         //Person Columns
         const val KEY_PERSON_ID = "id"
@@ -231,11 +270,15 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_GUILD_NAME = "name"
         const val KEY_GUILD_DESCRIPTION = "description"
         //Party Columns
-
         const val KEY_PARTY_ID = "id"
         const val KEY_PARTY_ACCOUNT_ID = "accID"
         const val KEY_PARTY_NAME = "name"
         const val KEY_PARTY_DESCRIPTION = "description"
+        //Friend Columns
+        const val KEY_FRIEND_ID = "id"
+        const val KEY_FRIEND_ACCOUNT_ID = "accID"
+        const val KEY_FRIEND_NAME = "name"
+        const val KEY_FRIEND_DESCRIPTION = "description"
         //Event Columns
         const val KEY_EVENT_ID = "id"
         const val KEY_EVENT_NAME = "name"
@@ -329,6 +372,20 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 + KEY_PARTY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + KEY_PARTY_NAME + " VARCHAR(40), "
                 + KEY_PARTY_DESCRIPTION + " VARCHAR(300), "
+
+                + ");")
+
+        private val CREATE_TABLE_FRIEND= ("CREATE TABLE " + TABLE_FRIEND + "("
+                + KEY_FRIEND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_FRIEND_ACCOUNT_ID + " INTEGER, "
+                + KEY_FRIEND_NAME + " VARCHAR(40), "
+                + KEY_FRIEND_DESCRIPTION + " VARCHAR(300), "
+                + ");")
+
+        private val CREATE_TABLE_FRIEND_GENERATED = ("CREATE TABLE " + TABLE_FRIEND_GENERATED + "("
+                + KEY_FRIEND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_FRIEND_NAME + " VARCHAR(40), "
+                + KEY_FRIEND_DESCRIPTION + " VARCHAR(300), "
 
                 + ");")
 
