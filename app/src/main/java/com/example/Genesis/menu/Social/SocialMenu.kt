@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Genesis.R
+import com.example.Genesis.menu.Social.Friends.FriendMenu
 import com.example.Genesis.menu.Social.Guild.GuildMenu.GuildMenu
+import com.example.Genesis.menu.Social.Party.PartyMenu
 
 
 class SocialMenu : AppCompatActivity() {
@@ -21,10 +23,19 @@ class SocialMenu : AppCompatActivity() {
             val i = Intent(this, GuildMenu::class.java)
             startActivity(i)
         }
+        partyButton.setOnClickListener(){
+            val i = Intent(this, PartyMenu::class.java)
+            startActivity(i)
+        }
+
+        friendButton.setOnClickListener(){
+            val i = Intent(this, FriendMenu::class.java)
+            startActivity(i)
+        }
 
     }
     private fun initView(){
-       guildButton = findViewById(R.id.guildButton)
+        guildButton = findViewById(R.id.guildButton)
 
-}
+    }
 }

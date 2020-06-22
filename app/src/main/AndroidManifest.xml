@@ -44,8 +44,8 @@
         <activity android:name=".menu.Quest.QuestsCreate.QuestCreateMenu" />
         <activity android:name=".menu.Account.Person" />
         <activity android:name=".menu.Account.Account" />
-        <activity android:name="com.example.Genesis.menu.Social.FriendsList.Friend" />
-        <activity android:name="com.example.Genesis.menu.Social.FriendsList.FriendsList" />
+        <activity android:name="com.example.Genesis.menu.Social.Friends.FriendMenu" />
+        <activity android:name="com.example.Genesis.menu.Social.Friends.FriendsList" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.InventoryMainActivity" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentActivity" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentAdapter" />
@@ -53,6 +53,7 @@
         <activity android:name=".menu.Social.Guild.GuildMenu.GuildMenu"/>
         <activity android:name=".menu.Social.Party.PartyCreateMenu"/>
         <activity android:name=".menu.Social.Party.PartyMenu"/>
+        <activity android:name=".menu.Social.Friends.FriendCreateMenu"/>
         <activity android:name=".menu.Social.SocialMenu"/>
 
         <activity
