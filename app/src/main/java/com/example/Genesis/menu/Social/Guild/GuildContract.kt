@@ -1,12 +1,13 @@
 package com.example.Genesis.menu.Social.Guild
 
+
 import com.example.Genesis.objects.Guild
 
 class GuildContract {
 
     interface GuildInterface{
         fun initViews()
-        fun showGuild(questName : String,questDescription : String)
+        fun showGuild(guildName : String,guildDescription : String)
     }
 
     interface GuildPresenterInterface{
@@ -15,18 +16,20 @@ class GuildContract {
         fun guildList()
     }
     interface GuildCreateInterface{
+
         fun initViews()
+
     }
 
     interface GuildCreatePresenterInterface{
-        fun createQuest(guildName : String, guildDescription : String)
+        fun createGuild(guildName : String, guildDescription : String)
     }
 
     interface GuildDatabaseInterface{
         fun getGuild() : ArrayList<Guild>
         fun insertGuild(guild : Guild)
         fun updateGuild()
-        fun deleteGuild(questID : Int)
+        fun deleteGuild(guildID : Int)
         fun getTrackedGuild() : Guild
 
     }

@@ -8,7 +8,7 @@
     tools:context=".menu.Quests">
 
     <Button
-        android:id="@+id/questGenerateButton"
+        android:id="@+id/guildGenerateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/questNameText"
+        android:id="@+id/guildNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -27,10 +27,10 @@
         android:layout_marginTop="40dp"
         android:text="Quest Name:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questGenerateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/guildGenerateButton" />
 
     <TextView
-        android:id="@+id/questNameValue"
+        android:id="@+id/guildNameValue"
         android:layout_width="208dp"
         android:layout_height="20dp"
         android:layout_marginStart="24dp"
@@ -39,28 +39,28 @@
         android:text="Quest Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.289"
-        app:layout_constraintStart_toEndOf="@+id/questNameText"
-        app:layout_constraintTop_toBottomOf="@+id/questGenerateButton" />
+        app:layout_constraintStart_toEndOf="@+id/guildNameText"
+        app:layout_constraintTop_toBottomOf="@+id/guildGenerateButton" />
 
     <TextView
-        android:id="@+id/questDescriptionText"
+        android:id="@+id/guildDescriptionText"
         android:layout_width="84dp"
         android:layout_height="23dp"
         android:layout_marginTop="12dp"
         android:text="Description"
-        app:layout_constraintStart_toStartOf="@+id/questNameText"
-        app:layout_constraintTop_toBottomOf="@+id/questNameText" />
+        app:layout_constraintStart_toStartOf="@+id/guildNameText"
+        app:layout_constraintTop_toBottomOf="@+id/guildNameText" />
 
     <TextView
-        android:id="@+id/questDescriptionValue"
+        android:id="@+id/guildDescriptionValue"
         android:layout_width="200dp"
         android:layout_height="211dp"
         android:layout_marginTop="8dp"
         android:text="description..."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/questNameValue"
-        app:layout_constraintTop_toBottomOf="@+id/questNameValue" />
+        app:layout_constraintStart_toStartOf="@+id/guildNameValue"
+        app:layout_constraintTop_toBottomOf="@+id/guildNameValue" />
 
     <TextView
         android:id="@+id/rewardText"
@@ -68,8 +68,8 @@
         android:layout_height="21dp"
         android:layout_marginTop="208dp"
         android:text="Reward"
-        app:layout_constraintStart_toStartOf="@+id/questDescriptionText"
-        app:layout_constraintTop_toBottomOf="@+id/questDescriptionText" />
+        app:layout_constraintStart_toStartOf="@+id/guildDescriptionText"
+        app:layout_constraintTop_toBottomOf="@+id/guildDescriptionText" />
 
     <TextView
         android:id="@+id/questRewardValue"
@@ -79,8 +79,8 @@
         android:text="rewards"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/questDescriptionValue"
-        app:layout_constraintTop_toBottomOf="@+id/questDescriptionValue" />
+        app:layout_constraintStart_toStartOf="@+id/guildDescriptionValue"
+        app:layout_constraintTop_toBottomOf="@+id/guildDescriptionValue" />
 
     <Button
         android:id="@+id/questCompleteButton"

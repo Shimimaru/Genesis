@@ -11,4 +11,13 @@
     <item name="guildAbandonButton" type="id" />
     <item name="guildCreateButton" type="id" />
     <item name="guildJoinButton" type="id" />
+    <item name="guildDeleteButton" type="id" />
+    <item name="guildButton" type="id" />
+    <item name="partyButton" type="id" />
+    <item name="partyCreateButton" type="id" />
+    <item name="partyNameValue" type="id" />
+    <item name="partyDescriptionValue" type="id" />
+    <item name="partyGenerateButton" type="id" />
+    <item name="partyDeleteButton" type="id" />
+    <item name="partyJoinButton" type="id" />
 </resources>

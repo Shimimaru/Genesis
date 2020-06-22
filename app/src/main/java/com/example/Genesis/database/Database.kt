@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.example.Genesis.objects.Quest
+import com.example.Genesis.objects.Guild
+import com.example.Genesis.objects.Party
 import com.example.Genesis.user.Account.Account
 import com.google.android.gms.maps.model.LatLng
 
@@ -20,6 +22,10 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         db.execSQL(CREATE_TABLE_PLAYER)
         db.execSQL(CREATE_TABLE_QUEST)
         db.execSQL(CREATE_TABLE_QUEST_GENERATED)
+        db.execSQL(CREATE_TABLE_GUILD)
+        db.execSQL(CREATE_TABLE_GUILD_GENERATED)
+        db.execSQL(CREATE_TABLE_PARTY)
+        db.execSQL(CREATE_TABLE_PARTY_GENERATED)
         db.execSQL(CREATE_TABLE_EVENT)
     }
 
@@ -29,6 +35,10 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_PLAYER'")
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_QUEST'")
         db.execSQL("DROP TABLE IF EXISTS '$TABLE_QUEST_GENERATED'")
+        db.execSQL("DROP TABLE IF EXISTS '$TABLE_GUILD'")
+        db.execSQL("DROP TABLE IF EXISTS '$TABLE_GUILD_GENERATED'")
+        db.execSQL("DROP TABLE IF EXISTS '$TABLE_PARTY'")
+        db.execSQL("DROP TABLE IF EXISTS '$TABLE_PARTY_GENERATED'")
         db.execSQL("DROP TABLE IF EXISTS '$CREATE_TABLE_EVENT'")
         onCreate(db)
     }
@@ -62,6 +72,8 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
             )
         )
     }
+
+
     fun insertGeneQuest(quest : Quest){
         var cv : ContentValues = ContentValues()
         cv.put(Database.KEY_QUEST_NAME,quest.name)
@@ -71,6 +83,75 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         cv.put(Database.KEY_QUEST_LONGITUDE, quest.latlng?.longitude)
         var re : Long = Database.dbw.insert(Database.TABLE_QUEST_GENERATED,null,cv)
     }
+
+    fun initGuildGenerator() {
+        insertGeneGuild(
+            Guild(
+                0,
+                "Guild 1",
+                "For people interested in weapons"
+
+            )
+        )
+        insertGeneGuild(
+            Guild(
+                1,
+                "Guild 2",
+                "For people interested in quests"
+
+            )
+        )
+        insertGeneGuild(
+            Guild(
+                2,
+                "Guild 2",
+                "For people interested in stats"
+
+            )
+        )
+    }
+    fun insertGeneGuild(guild: Guild ){
+        var cv : ContentValues = ContentValues()
+        cv.put(Database.KEY_GUILD_NAME,guild.name)
+        cv.put(Database.KEY_GUILD_DESCRIPTION,guild.description)
+        var re : Long = Database.dbw.insert(Database.TABLE_GUILD_GENERATED,null,cv)
+    }
+
+
+
+    fun initPartyGenerator() {
+        insertGeneParty(
+            Party(
+                0,
+                "Party 1",
+                "For people interested in combat"
+
+            )
+        )
+        insertGeneParty(
+            Party(
+                1,
+                "Party 2",
+                "For people interested in items"
+
+            )
+        )
+        insertGeneParty(
+           Party(
+                2,
+                "Party 3",
+                "For people interested in stats"
+
+            )
+        )
+    }
+    fun insertGeneParty(party: Party ){
+        var cv : ContentValues = ContentValues()
+        cv.put(Database.KEY_PARTY_NAME,party.name)
+        cv.put(Database.KEY_PARTY_DESCRIPTION,party.description)
+        var re : Long = Database.dbw.insert(Database.TABLE_PARTY_GENERATED,null,cv)
+    }
+
 
     fun wipeDatabase(context : Context)
     {
@@ -91,6 +172,10 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val TABLE_PLAYER = "player"
         const val TABLE_QUEST = "accountQuest"
         const val TABLE_QUEST_GENERATED = "questGenerated"
+        const val TABLE_GUILD = "accountGuild"
+        const val TABLE_GUILD_GENERATED = "guildGenerated"
+        const val TABLE_PARTY = "accountParty"
+        const val TABLE_PARTY_GENERATED = "partyGenerated"
         const val TABLE_EVENT = "event"
         //Account Columns
         const val KEY_ACCOUNT_ID = "id"
@@ -99,6 +184,8 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_ACCOUNT_PERSONID = "personID"
         const val KEY_ACCOUNT_PLAYERID = "playerID"
         const val KEY_ACCOUNT_QUEST = "quest"
+        const val KEY_ACCOUNT_GUILD = "guild"
+        const val KEY_ACCOUNT_PARTY = "party"
         //Person Columns
         const val KEY_PERSON_ID = "id"
         const val KEY_PERSON_FIRSTNAME = "firstName"
@@ -138,11 +225,17 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_QUEST_LATITUDE = "latitude"
         const val KEY_QUEST_LONGITUDE = "longitude"
         const val KEY_QUEST_LEVEL = "level"
-
+        //Guild Columns
         const val KEY_GUILD_ID = "id"
         const val KEY_GUILD_ACCOUNT_ID = "accID"
         const val KEY_GUILD_NAME = "name"
         const val KEY_GUILD_DESCRIPTION = "description"
+        //Party Columns
+
+        const val KEY_PARTY_ID = "id"
+        const val KEY_PARTY_ACCOUNT_ID = "accID"
+        const val KEY_PARTY_NAME = "name"
+        const val KEY_PARTY_DESCRIPTION = "description"
         //Event Columns
         const val KEY_EVENT_ID = "id"
         const val KEY_EVENT_NAME = "name"
@@ -158,6 +251,7 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 + KEY_ACCOUNT_PERSONID + " INTEGER,"
                 + KEY_ACCOUNT_PLAYERID + " INTEGER,"
                 + KEY_ACCOUNT_QUEST + " INTEGER"
+                + KEY_ACCOUNT_GUILD + " INTEGER"
                 + ");")
         private val CREATE_TABLE_PERSON = ("CREATE TABLE " + TABLE_PERSON + "("
                 + KEY_PERSON_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -211,6 +305,33 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 + KEY_QUEST_LONGITUDE + " DOUBLE, "
                 + KEY_QUEST_LEVEL + " INT"
                 + ");")
+        private val CREATE_TABLE_GUILD = ("CREATE TABLE " + TABLE_GUILD + "("
+                + KEY_GUILD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_GUILD_ACCOUNT_ID + " INTEGER, "
+                + KEY_GUILD_NAME + " VARCHAR(40), "
+                + KEY_GUILD_DESCRIPTION + " VARCHAR(300), "
+                + ");")
+
+        private val CREATE_TABLE_GUILD_GENERATED = ("CREATE TABLE " + TABLE_GUILD_GENERATED + "("
+                + KEY_GUILD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_GUILD_NAME + " VARCHAR(40), "
+                + KEY_GUILD_DESCRIPTION + " VARCHAR(300), "
+
+                + ");")
+        private val CREATE_TABLE_PARTY= ("CREATE TABLE " + TABLE_PARTY + "("
+                + KEY_PARTY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_PARTY_ACCOUNT_ID + " INTEGER, "
+                + KEY_PARTY_NAME + " VARCHAR(40), "
+                + KEY_PARTY_DESCRIPTION + " VARCHAR(300), "
+                + ");")
+
+        private val CREATE_TABLE_PARTY_GENERATED = ("CREATE TABLE " + TABLE_PARTY_GENERATED + "("
+                + KEY_PARTY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_PARTY_NAME + " VARCHAR(40), "
+                + KEY_PARTY_DESCRIPTION + " VARCHAR(300), "
+
+                + ");")
+
         private val CREATE_TABLE_EVENT = ("CREATE TABLE " + TABLE_EVENT + "("
                 + KEY_EVENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + KEY_EVENT_NAME + " VARCHAR(300), "

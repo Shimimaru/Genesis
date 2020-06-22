@@ -49,6 +49,11 @@
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.InventoryMainActivity" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentActivity" />
         <activity android:name="com.example.Genesis.menu.Account.Inventory.view.EquipmentAdapter" />
+        <activity android:name=".menu.Social.Guild.GuildCreateMenu"/>
+        <activity android:name=".menu.Social.Guild.GuildMenu.GuildMenu"/>
+        <activity android:name=".menu.Social.Guild.GuildM"/>
+        <activity android:name=".menu.Social.SocialMenu"/>
+
         <activity
             android:name=".menu.Map.Map"
             android:label="@string/title_activity_map" />

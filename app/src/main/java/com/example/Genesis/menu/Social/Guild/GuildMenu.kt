@@ -1,13 +1,14 @@
-package com.example.Genesis.menu.Social.Guild
+package com.example.Genesis.menu.Social.Guild.GuildMenu
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Genesis.R
-import com.example.Genesis.menu.Quest.GuildDatabase
 import com.example.Genesis.menu.Social.Guild.GuildContract.GuildInterface
-import com.example.Genesis.menu.Quest.QuestMenu.QuestMenu.Companion.questList
+import com.example.Genesis.menu.Social.Guild.GuildPresenter
+import com.example.Genesis.menu.Social.GuildDatabase
 import java.io.Serializable
 import com.example.Genesis.objects.Guild
 
@@ -16,7 +17,7 @@ class GuildMenu : AppCompatActivity(), GuildInterface,Serializable {
     lateinit var guildName: TextView
     lateinit var guildDescription: TextView
     lateinit var guildGenerateButton: Button
-    lateinit var guildLeaveButton: Button
+    lateinit var guildDeleteButton: Button
     lateinit var guildJoinButton: Button
     lateinit var listView: ListView
     lateinit var guildPresenter: GuildPresenter
@@ -49,15 +50,16 @@ class GuildMenu : AppCompatActivity(), GuildInterface,Serializable {
             trackedGuild = guildList.get(currentPosition).id
             guildDatabase.updateGuild()
         }
-        guildLeaveButton.setOnClickListener() {
-            guildDatabase.deleteGuild(questList.get(currentPosition).id)
-            arrayAdapter.remove(questList.get(currentPosition).name)
+
+        guildDeleteButton.setOnClickListener() {
+            guildDatabase.deleteGuild(guildList.get(currentPosition).id)
+            arrayAdapter.remove(guildList.get(currentPosition).name)
             sortNameList()
         }
-        listView.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
-            guildName.text = questList.get(i).name
+        listView.onItemClickListener = OnItemClickListener { adapterView, view, i, l ->
+            guildName.text = guildList.get(i).name
             currentPosition = i;
-            guildDescription.text = questList.get(i).description
+            guildDescription.text = guildList.get(i).description
         }
     }
 
@@ -66,7 +68,7 @@ class GuildMenu : AppCompatActivity(), GuildInterface,Serializable {
         guildName = findViewById<TextView>(R.id.guildNameValue)
         guildDescription = findViewById<TextView>(R.id.guildDescriptionValue)
         guildGenerateButton = findViewById<Button>(R.id.guildGenerateButton)
-        guildLeaveButton = findViewById<Button>(R.id.guildAbandonButton)
+        guildDeleteButton = findViewById<Button>(R.id.guildDeleteButton)
         guildCreateButton = findViewById<Button>(R.id.guildCreateButton)
         guildJoinButton = findViewById<Button>(R.id.guildJoinButton)
         listView = findViewById<ListView>(R.id.listView)
@@ -79,7 +81,7 @@ class GuildMenu : AppCompatActivity(), GuildInterface,Serializable {
         listView.adapter = arrayAdapter
     }
 
-    override fun showGuild(questName: String, questDescription: String) {
+    override fun showGuild(guildName: String, guildDescription: String) {
         TODO("Not yet implemented")
     }
     fun sortNameList(){

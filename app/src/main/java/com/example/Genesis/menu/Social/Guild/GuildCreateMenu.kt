@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Genesis.R
-import com.example.Genesis.menu.Quest.GuildDatabase
-import com.example.Genesis.menu.Quest.QuestsCreate.QuestCreatePresenter
+import com.example.Genesis.menu.Social.GuildDatabase
 
-
-class GuildCreateMenu () : AppCompatActivity(), GuildContract.GuildCreateInterface{
+class GuildCreateMenu  : AppCompatActivity(), GuildContract.GuildCreateInterface {
     lateinit var guildPresenter : GuildCreatePresenter
     lateinit var guildDatabase : GuildDatabase
     lateinit var guildDescription : TextView
@@ -19,7 +18,7 @@ class GuildCreateMenu () : AppCompatActivity(), GuildContract.GuildCreateInterfa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quest_create_menu)
+        setContentView(R.layout.activity_guild_create_menu)
         guildDatabase =
             GuildDatabase(this)
 
@@ -31,6 +30,14 @@ class GuildCreateMenu () : AppCompatActivity(), GuildContract.GuildCreateInterfa
 
     }
     override fun initViews() {
-        TODO("Not yet implemented")
+        guildName = findViewById<EditText>(R.id.nameValue)
+        guildDescription = findViewById<EditText>(R.id.descriptionValue)
+        guildCreateButton = findViewById<Button>(R.id.guildCreateButton)
+    }
+
+        fun showToast(s: String) {
+        var toast : Toast = Toast.makeText(this,s, Toast.LENGTH_SHORT)
+        toast.show()
     }
 }
+

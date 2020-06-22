@@ -28,10 +28,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nameText"
-        app:layout_constraintTop_toBottomOf="@+id/questCreateTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/guildCreateTitle" />
 
     <TextView
-        android:id="@+id/questCreateTitle"
+        android:id="@+id/guildCreateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/levelValue" />
 
     <Button
-        android:id="@+id/questCreateButton"
+        android:id="@+id/guildCreateButton"
         android:layout_width="205dp"
         android:layout_height="49dp"
         android:layout_marginTop="10dp"
