@@ -15,7 +15,7 @@ class MapLocation(var map : Map, var googleMap: GoogleMap, var mapDB: MapDB){
 
     private var REQUEST_LOCATION_PERMISSION = 1
     var fusedLocationClient: FusedLocationProviderClient = map.fusedLocationClient
-    private var currentLocation : LatLng = LatLng(-36.966539,174.923868)
+    private var currentLocation : LatLng = LatLng(-36.9073,174.7694)
 
     init{
 

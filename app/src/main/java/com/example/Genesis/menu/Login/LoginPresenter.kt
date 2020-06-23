@@ -13,23 +13,10 @@ class LoginPresenter(private var login : Login,var loginDB : LoginDatabase) : Lo
             Account.accountNumber)
         Account.player = account.player
         Account.person = account.person
-
     }
 
-    override fun validateAccount(username: String, password: String): Boolean {
-        return if(loginDB.checkUserName(username)) {
-            if (loginDB.checkPassWord(username, password)) {
-
-                Account.accountNumber = loginDB.getAccountID(username)
-                true
-            } else {
-                login.showMessage("Wrong Password")
-                false
-            }
-        } else {
-            login.showMessage("Username not Found")
-            false
-        }
+    override fun validateAccount(username: String, password: String){
+        loginDB.checkUserName(username,password)
     }
 
     override fun showMainMenu() {
