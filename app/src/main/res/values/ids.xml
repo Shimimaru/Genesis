@@ -5,4 +5,25 @@
     <item name="rewardNameValue" type="id" />
     <item name="InventoryButton" type="id" />
     <item name="equipment_list" type="id" />
+    <item name="guildNameValue" type="id" />
+    <item name="guildDescriptionValue" type="id" />
+    <item name="guildGenerateButton" type="id" />
+    <item name="guildAbandonButton" type="id" />
+    <item name="guildCreateButton" type="id" />
+    <item name="guildJoinButton" type="id" />
+    <item name="guildDeleteButton" type="id" />
+    <item name="guildButton" type="id" />
+    <item name="partyButton" type="id" />
+    <item name="partyCreateButton" type="id" />
+    <item name="partyNameValue" type="id" />
+    <item name="partyDescriptionValue" type="id" />
+    <item name="partyGenerateButton" type="id" />
+    <item name="partyDeleteButton" type="id" />
+    <item name="partyJoinButton" type="id" />
+    <item name="friendAddButton" type="id" />
+    <item name="friendNameValue" type="id" />
+    <item name="friendDescriptionValue" type="id" />
+    <item name="friendGenerateButton" type="id" />
+    <item name="friendDeleteButton" type="id" />
+    <item name="friendJoinButton" type="id" />
 </resources>

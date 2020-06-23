@@ -11,6 +11,8 @@ import com.example.Genesis.menu.Account.Account
 import com.example.Genesis.menu.Quest.QuestMenu.QuestMenu
 import com.example.Genesis.menu.Account.Setting
 import com.example.Genesis.menu.Account.planner.Planner
+import com.example.Genesis.menu.Social.SocialMenu
+import kotlinx.android.synthetic.main.activity_main_menu.*
 
 class MainMenu : AppCompatActivity() {
 
@@ -20,6 +22,7 @@ class MainMenu : AppCompatActivity() {
     private lateinit var settingButton : Button
     private lateinit var mapButton : Button
     private lateinit var combatButton : Button
+    private lateinit var socialButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +57,22 @@ class MainMenu : AppCompatActivity() {
             val i = Intent(this, Map::class.java)
             startActivity(i);
         }
+
         combatButton = findViewById<Button>(R.id.combatButton)
         combatButton.setOnClickListener()
         {
             val i = Intent(this, arCore::class.java)
+         }
+        mapButton = findViewById<Button>(R.id.questMapButton)
+        mapButton.setOnClickListener()
+        {
+            val i = Intent(this, Map::class.java)
+            startActivity(i);
+        }
+        socialButton = findViewById<Button>(R.id.socialButton)
+        socialButton.setOnClickListener()
+        {
+            val i = Intent(this, SocialMenu::class.java)
             startActivity(i);
         }
     }

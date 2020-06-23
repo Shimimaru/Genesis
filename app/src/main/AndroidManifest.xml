@@ -34,12 +34,18 @@
         <activity android:name=".menu.Quest.QuestsCreate.QuestCreateMenu" />
         <activity android:name=".menu.Account.Person" />
         <activity android:name=".menu.Account.Account" />
-        <activity android:name=".menu.Social.FriendsList.Friend" />
-        <activity android:name=".menu.Social.FriendsList.FriendsList" />
+        <activity android:name=".menu.Map.Map" android:label="@string/title_activity_map" />
+        <activity android:name=".menu.Social.Friends.FriendMenu" />
+        <activity android:name=".menu.Social.Friends.FriendsList" />
         <activity android:name=".menu.Account.Inventory.view.InventoryMainActivity" />
         <activity android:name=".menu.Account.Inventory.view.EquipmentActivity" />
         <activity android:name=".menu.Account.Inventory.view.EquipmentAdapter" />
-        <activity android:name=".menu.Map.Map" android:label="@string/title_activity_map" />
+        <activity android:name=".menu.Social.Guild.GuildCreateMenu"/>
+        <activity android:name=".menu.Social.Guild.GuildMenu.GuildMenu"/>
+        <activity android:name=".menu.Social.Party.PartyCreateMenu"/>
+        <activity android:name=".menu.Social.Party.PartyMenu"/>
+        <activity android:name=".menu.Social.Friends.FriendCreateMenu"/>
+        <activity android:name=".menu.Social.SocialMenu"/>
         <activity android:name=".menu.Register.Register" />
         <activity android:name=".menu.Account.Setting" />
         <activity android:name=".menu.Quest.QuestMenu.QuestMenu" />
