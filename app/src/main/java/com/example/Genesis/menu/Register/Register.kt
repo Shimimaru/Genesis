@@ -25,7 +25,7 @@ class Register : AppCompatActivity() {
         var registerButton = findViewById(R.id.registerButton) as Button
         registerButton.setOnClickListener()
         {
-            if(!LoginDatabase(this).checkUserName(usernameTextBox.text.toString())){
+            if(true){//!LoginDatabase(this).checkUserName(usernameTextBox.text.toString())){
                 var account = Account(
                     this
                     , usernameTextBox.text.toString()
@@ -35,16 +35,16 @@ class Register : AppCompatActivity() {
                     , emailTextBox.text.toString()
                     , phoneTextBox.text.toString()
                 )
-                val i = Intent(this, MainMenu::class.java)
-                startActivity(i)
             }
             else
             {
                 Toast.makeText(getApplicationContext(),"Username is Taken", Toast.LENGTH_SHORT).show();
             }
-
-
-
         }
+    }
+
+    fun showMainMenu() {
+        val i = Intent(this, MainMenu::class.java)
+        startActivity(i)
     }
 }

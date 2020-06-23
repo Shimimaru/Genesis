@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.Genesis.R
+import com.example.Genesis.combat.arCore.arCore
 import com.example.Genesis.menu.Map.Map
 import com.example.Genesis.menu.Account.Account
 import com.example.Genesis.menu.Quest.QuestMenu.QuestMenu
@@ -18,6 +19,7 @@ class MainMenu : AppCompatActivity() {
     private lateinit var questButton : Button
     private lateinit var settingButton : Button
     private lateinit var mapButton : Button
+    private lateinit var combatButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +52,12 @@ class MainMenu : AppCompatActivity() {
         mapButton.setOnClickListener()
         {
             val i = Intent(this, Map::class.java)
+            startActivity(i);
+        }
+        combatButton = findViewById<Button>(R.id.combatButton)
+        combatButton.setOnClickListener()
+        {
+            val i = Intent(this, arCore::class.java)
             startActivity(i);
         }
     }

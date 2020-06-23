@@ -36,6 +36,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/combatButton"
+        android:layout_width="259dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="144dp"
+        android:background="@android:color/black"
+        android:text="Combat"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/plannerButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/plannerButton"
         android:layout_width="263dp"
         android:layout_height="54dp"
@@ -105,6 +118,8 @@
         android:layout_width="265dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
         android:text="Map"
         app:layout_constraintEnd_toEndOf="@+id/socialButton"
         app:layout_constraintTop_toBottomOf="@+id/socialButton" />

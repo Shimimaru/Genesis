@@ -1,6 +1,7 @@
 package com.example.Genesis.user.Account
 
 import android.content.Context
+import com.example.Genesis.menu.Register.Register
 import com.example.Genesis.objects.Quest
 import com.example.Genesis.user.Person.Person
 import com.example.Genesis.user.Player.Player
@@ -21,14 +22,14 @@ class Account () : Serializable{
         player = Player()
     }
 
-    constructor(context : Context,username: String,password : String,firstName : String,lastName : String,email : String,phone : String) : this()
+    constructor(register: Register,username: String,password : String,firstName : String,lastName : String,email : String,phone : String) : this()
     {
         accountDB = AccountDatabase(this)
         this.username = username
         this.password = password
         person = Person(firstName,lastName,email,phone)
         player = Player()
-        accountDB.insertAccount(person,player)
+        accountDB.insertAccount(person,player,register)
         player.playerDB.updatePlayer(accNum)
         person.personDB.updatePerson(accNum)
     }

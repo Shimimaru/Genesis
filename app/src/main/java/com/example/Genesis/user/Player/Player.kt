@@ -54,4 +54,93 @@ class Player() : Serializable, PlayerInterface {
         this.charismaExperienceValue = 0
         this.charismaExperienceMax = 100
     }
+
+    override fun toString(): String {
+        var string = ""
+        if(level != null)
+            string += level.toString() + "_"
+        else
+            string += "null_"
+        if(levelExperienceValue != null)
+            string += levelExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(levelExperienceMax != null)
+            string += levelExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        if(strength != null)
+            string += strength.toString() + "_"
+        else
+            string += "null_"
+        if(strengthExperienceValue != null)
+            string += strengthExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(strengthExperienceMax != null)
+            string += strengthExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        if(agility != null)
+            string += agility.toString() + "_"
+        else
+            string += "null_"
+        if(agilityExperienceValue != null)
+            string += agilityExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(agilityExperienceMax != null)
+            string += agilityExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        if(endurance != null)
+            string += endurance.toString() + "_"
+        else
+            string += "null_"
+        if(enduranceExperienceValue != null)
+            string += enduranceExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(enduranceExperienceMax != null)
+            string += enduranceExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        if(intelligence != null)
+            string += intelligence.toString() + "_"
+        else
+            string += "null_"
+        if(intelligenceExperienceValue != null)
+            string += intelligenceExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(intelligenceExperienceMax != null)
+            string += intelligenceExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        if(wisdom != null)
+            string += wisdom.toString() + "_"
+        else
+            string += "null_"
+        if(wisdomExperienceValue != null)
+            string += wisdomExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(wisdomExperienceMax != null)
+            string += wisdomExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        if(charisma != null)
+            string += charisma.toString() + "_"
+        else
+            string += "null_"
+        if(charismaExperienceValue != null)
+            string += charismaExperienceValue.toString() + "_"
+        else
+            string += "null_"
+        if(charismaExperienceMax != null)
+            string += charismaExperienceMax.toString() + "_"
+        else
+            string += "null_"
+        return string
+    }
 }

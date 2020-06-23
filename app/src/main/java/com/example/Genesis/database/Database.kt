@@ -147,7 +147,7 @@ class Database(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val KEY_EVENT_ACCOUNT = "accNum"
         //Create Tables
         private val CREATE_TABLE_ACCOUNT = ("CREATE TABLE " + TABLE_ACCOUNT + "("
-                + KEY_ACCOUNT_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + KEY_ACCOUNT_ID  + " INTEGER PRIMARY KEY,"
                 + KEY_ACCOUNT_USERNAME + " VARCHAR(20) UNIQUE,"
                 + KEY_ACCOUNT_PASSWORD + " VARCHAR(20),"
                 + KEY_ACCOUNT_PERSONID + " INTEGER,"

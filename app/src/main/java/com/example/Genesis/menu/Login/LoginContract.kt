@@ -9,15 +9,14 @@ class LoginContract {
     interface LoginPresenterInterface
     {
         fun initAccount(accNum : Int)
-        fun validateAccount(username:String,password: String) : Boolean
+        fun validateAccount(username:String,password: String)
         fun showMainMenu()
         fun showRegister()
     }
 
     interface LoginDatabaseInterface
     {
-        fun checkUserName(username : String):Boolean
-        fun checkPassWord(username : String,password : String):Boolean
-        fun getAccountID(username : String):Int
+        fun checkUserName(username : String,password: String)
+        fun checkPassWord(username : String,password : String)
     }
 }

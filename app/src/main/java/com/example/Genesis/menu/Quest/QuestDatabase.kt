@@ -23,6 +23,7 @@ class QuestDatabase() : QuestDatabaseInterface,Serializable {
     }
 
     override fun getQuest() : ArrayList<Quest>{
+        System.out.println(Account.accountNumber)
         var query : String = "SELECT * FROM " + Database.TABLE_QUEST + " WHERE " + Database.KEY_QUEST_ACCOUNT_ID + " = " + Account.accountNumber
         var cursor : Cursor = Database.dbw.rawQuery(query,null)
         var questList : ArrayList<Quest> = ArrayList<Quest>()
